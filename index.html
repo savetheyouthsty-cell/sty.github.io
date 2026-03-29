@@ -3,59 +3,88 @@
 <head>
   <title>SaveTheYouth</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      text-align: center;
+    body { margin:0; font-family:Arial; }
+
+    nav {
+      background:black;
+      color:white;
+      padding:15px;
+      position:fixed;
+      width:100%;
     }
 
-    .hero {
-      background: #111;
-      color: white;
-      padding: 100px 20px;
+    nav a {
+      color:white;
+      margin:0 15px;
+      text-decoration:none;
     }
 
     .section {
-      padding: 60px 20px;
+      padding:100px 20px;
+      text-align:center;
+    }
+
+    .hero {
+      background:#111;
+      color:white;
+      padding:150px 20px;
     }
 
     button {
-      padding: 12px 25px;
-      font-size: 16px;
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
+      padding:10px 20px;
+      margin:10px;
+      border:none;
+      background:black;
+      color:white;
+      cursor:pointer;
     }
   </style>
 </head>
 
 <body>
 
-<div class="hero">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#program">Program</a>
+  <a href="#team">Team</a>
+  <a href="#apply">Apply</a>
+  <a href="#donate">Donate</a>
+</nav>
+
+<div id="home" class="hero">
   <h1>SaveTheYouth</h1>
-  <p>A student-led cultural exchange program</p>
-  <a href="YOUR_GOOGLE_FORM_LINK">
-    <button>Apply Now</button>
-  </a>
+  <p>A student-led cultural exchange & mentoring program</p>
 </div>
 
-<div class="section">
-  <h2>About</h2>
-  <p>8-week program where students read, discuss, and connect globally.</p>
+<div id="program" class="section">
+  <h2>Programs</h2>
+  <h3>Culture Exchange</h3>
+  <p>Students connect and discuss across cultures.</p>
+
+  <h3>Mentoring Program</h3>
+  <p>Support for students adjusting to a new environment.</p>
 </div>
 
-<div class="section">
-  <h2>How It Works</h2>
-  <p>📖 Read</p>
-  <p>💬 Discuss</p>
-  <p>🌎 Connect</p>
+<div id="apply" class="section">
+  <h2>Apply</h2>
+
+  <h3>Culture Exchange</h3>
+  <a href="LINK1"><button>Host</button></a>
+  <a href="LINK2"><button>Partner</button></a>
+
+  <h3>Mentoring</h3>
+  <a href="LINK3"><button>Mentor</button></a>
+  <a href="LINK4"><button>Mentee</button></a>
 </div>
 
-<div class="section">
-  <h2>Roles</h2>
-  <p><b>Host:</b> Leads discussions</p>
-  <p><b>Partner:</b> Participates and shares</p>
+<div id="team" class="section">
+  <h2>Our Team</h2>
+  <p>Introduce your team here.</p>
+</div>
+
+<div id="donate" class="section">
+  <h2>Donate</h2>
+  <p>Support our mission.</p>
 </div>
 
 </body>
