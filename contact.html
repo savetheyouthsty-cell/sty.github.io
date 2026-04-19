@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">Contact</span>
+    <h1 class="section-title">Get in Touch</h1>
+    <p class="section-desc">Have a question, want to partner with us, or just want to say hello? We would love to hear from you.</p>
+  </section>
+
+  <div class="contact-wrap fade-in">
+    <div class="contact-item">
+      <div class="contact-icon">&#9993;</div>
+      <h3>Email</h3>
+      <a href="mailto:savetheyouth.sty@gmail.com">savetheyouth.sty@gmail.com</a>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon">&#128247;</div>
+      <h3>Instagram</h3>
+      <a href="https://instagram.com/savetheyouth.sty" target="_blank">@savetheyouth.sty</a>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon">&#128222;</div>
+      <h3>Phone</h3>
+      <a href="tel:+15717300042">(571) 730-0042</a>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <p style="font-size: 0.95rem; color: var(--clr-text-light); font-weight: 300; line-height: 1.7;">For general inquiries, partnership opportunities, or media requests, please reach out through email. We typically respond within 48 hours.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">Donate</span>
+    <h1 class="section-title">Support Our Mission</h1>
+    <p class="section-desc">Your contribution helps us connect more students across borders and provide mentorship to immigrant youth.</p>
+  </section>
+
+  <div class="content-section fade-in" style="text-align:center;">
+    <h2 style="margin-top:0;">Why Your Support Matters</h2>
+    <p>Save the Youth is committed to supporting every participant. Your donation helps us maintain and expand our cultural exchange and mentorship programs, develop better resources for students and mentors, and reach more young people who need support.</p>
+
+    <div style="margin: 3rem 0; padding: 3rem; background: var(--clr-white); border-radius: 20px;">
+      <h2 style="margin-top:0;">Donation Coming Soon</h2>
+      <p>We are currently setting up our donation system. In the meantime, if you would like to support Save the Youth, please reach out to us directly.</p>
+      <a href="contact.html" class="btn-primary" style="margin-top:1rem;">Contact Us</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

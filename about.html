@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">About Us</span>
+    <h1 class="section-title">Who We Are</h1>
+    <p class="section-desc">Save the Youth is a student-led mentorship and cultural exchange organization built to help young people connect, adjust, and grow.</p>
+  </section>
+
+  <div class="content-section fade-in">
+    <h2>Our Story</h2>
+    <p>Save the Youth was founded on a simple idea: no student should have to navigate a new country alone. Many immigrant students face language barriers, unfamiliar school cultures, and a deep sense of isolation after arriving in the United States. At the same time, students around the world rarely get the chance to learn from peers in other countries through direct, personal conversation.</p>
+    <p>We set out to address both of these needs. Save the Youth connects students from different countries through cultural exchange, and pairs newly arrived immigrant students with peer mentors who understand what it means to start over in an unfamiliar place.</p>
+
+    <h2>What We Believe</h2>
+    <p>We believe that meaningful connections between young people can break down cultural barriers, build confidence, and create a stronger sense of belonging. We believe that mentorship works best when it comes from someone who has walked a similar path. And we believe that these experiences should be accessible and open to every student who needs them.</p>
+
+    <h2>Where We Are Now</h2>
+    <p>Save the Youth is in its early stage, focused on building a strong foundation before expanding. Our priority right now is launching our programs on a small scale, establishing trust, and making sure every participant has a meaningful experience. As we grow, we plan to expand our reach to connect students from more countries and support more communities.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">Apply</span>
+    <h1 class="section-title">Join Save the Youth</h1>
+    <p class="section-desc">Choose the program and role that fits you. Click to open the application form.</p>
+  </section>
+
+  <div class="content-section fade-in" style="text-align:center; max-width:1000px;">
+    <h2 style="margin-top:0;">Cultural Exchange Program</h2>
+    <p style="max-width:600px; margin:0 auto 2rem;">Connect with a student from another country for meaningful cultural conversations and shared learning.</p>
+  </div>
+
+  <div class="apply-grid fade-in">
+    <div class="apply-card">
+      <div class="card-icon">&#127482;&#127480;</div>
+      <h3>Host (U.S. Student)</h3>
+      <p>You are a student in the United States who wants to connect with an international student.</p>
+      <a href="https://forms.gle/SY7S1SmACgWzzgWD6" target="_blank" class="btn-primary" style="font-size:0.88rem; padding:0.7rem 1.8rem;">Apply as Host</a>
+    </div>
+    <div class="apply-card">
+      <div class="card-icon">&#127760;</div>
+      <h3>Partner (International Student)</h3>
+      <p>You are a student outside the U.S. who wants to connect with an American student.</p>
+      <a href="https://forms.gle/1mKULj49KoiNf2GC7" target="_blank" class="btn-primary" style="font-size:0.88rem; padding:0.7rem 1.8rem;">Apply as Partner</a>
+    </div>
+  </div>
+
+  <div class="content-section fade-in" style="text-align:center; max-width:1000px; padding-top:3rem;">
+    <h2 style="margin-top:0;">Mentorship Program</h2>
+    <p style="max-width:600px; margin:0 auto 2rem;">Support a newly arrived immigrant student, or find a mentor who understands your experience.</p>
+  </div>
+
+  <div class="apply-grid fade-in" style="padding-top:0;">
+    <div class="apply-card">
+      <div class="card-icon">&#129309;</div>
+      <h3>Mentor</h3>
+      <p>You have lived in the U.S. for at least two years and want to guide a newly arrived student.</p>
+      <a href="https://forms.gle/UDZvRMtrmzcLoLgs6" target="_blank" class="btn-primary" style="font-size:0.88rem; padding:0.7rem 1.8rem;">Apply as Mentor</a>
+    </div>
+    <div class="apply-card">
+      <div class="card-icon">&#127793;</div>
+      <h3>Mentee</h3>
+      <p>You are an immigrant student who recently arrived in the U.S. and would like support from a peer.</p>
+      <a href="https://forms.gle/u1VyKV65BjUFu8iK9" target="_blank" class="btn-primary" style="font-size:0.88rem; padding:0.7rem 1.8rem;">Apply as Mentee</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

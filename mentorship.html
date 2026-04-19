@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentorship - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">Program</span>
+    <h1 class="section-title">Immigrant Student Mentorship</h1>
+    <p class="section-desc">One-on-one peer mentorship for newly arrived immigrant students adjusting to life in the United States.</p>
+  </section>
+
+  <div class="content-section fade-in">
+    <h2>What Is the Mentorship Program?</h2>
+    <p>Our Mentorship Program pairs newly arrived immigrant students with peer mentors who have already gone through the experience of adjusting to life in the United States. Mentors are high school students who understand the challenges of navigating a new language, school system, and culture firsthand.</p>
+    <p>The program goes beyond academic tutoring. It addresses the full range of challenges immigrant students face, including English communication, school culture, social adjustment, and the emotional weight of starting over in a new country.</p>
+
+    <h2>How It Works</h2>
+    <p>Each mentor and mentee pair meets online through Google Meet once every two weeks for approximately 40 minutes. Sessions are conversation-based, with materials designed to encourage natural dialogue rather than short question-and-answer exchanges. Topics range from everyday school life to personal experiences and practical advice for adapting to a new environment.</p>
+
+    <h2>What Students Gain</h2>
+    <p>Mentees gain greater confidence in speaking English, a clearer understanding of American school and social norms, and a trusted peer they can turn to with questions and concerns. Mentors develop stronger leadership, communication skills, empathy, and a sense of responsibility.</p>
+
+    <h2>Who Can Participate</h2>
+    <p>Mentees are immigrant students in grades 7 through 12 who have recently arrived in the United States. No strict English proficiency requirement exists, as long as the student can engage in basic communication. Mentors must be students in grades 9 through 12 who have lived in the United States for at least two years and can communicate comfortably in English.</p>
+
+    <h2>Mentor Requirements</h2>
+    <p>Mentors must demonstrate responsibility and commitment to the program. All mentors complete an orientation before being matched, covering the organization's mission, how to lead conversations naturally, communication guidelines, professionalism, scheduling expectations, and online safety and privacy rules.</p>
+  </div>
+
+  <div style="text-align:center; padding: 0 2rem 4rem;">
+    <a href="apply.html" class="btn-primary">Apply Now</a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

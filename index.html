@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item">
+        <a href="#">About</a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="team.html">Our Team</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">Programs</a>
+        <div class="dropdown">
+          <a href="exchange.html">Cultural Exchange</a>
+          <a href="mentorship.html">Mentorship</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-tag">Cultural Exchange &amp; Youth Mentorship</span>
+      <h1>Connecting Young Minds <em>Across Borders</em></h1>
+      <p>Save the Youth brings students together through global cultural exchange and supports newly arrived immigrant students with mentorship they can count on.</p>
+      <div class="hero-btns">
+        <a href="apply.html" class="btn-primary">Join the Program</a>
+        <a href="exchange.html" class="btn-secondary">Our Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="impact-bar fade-in">
+    <div class="impact-bar-inner">
+      <div class="impact-item">
+        <div class="num">1:1</div>
+        <div class="label">Personalized pairing</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">Gr 7-12</div>
+        <div class="label">Middle and high school</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">Global</div>
+        <div class="label">Exchange across borders</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-wrap fade-in">
+    <div style="text-align:center; margin-bottom: 3rem;">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Two Programs, One Purpose</h2>
+    </div>
+    <div class="cards-grid">
+      <a href="exchange.html" class="card" style="text-decoration:none; color:inherit;">
+        <div class="card-accent green"></div>
+        <h3>Global Cultural Exchange</h3>
+        <p>Students from different countries connect for meaningful cross-cultural conversations and shared learning.</p>
+        <span class="btn-secondary" style="padding:0.6rem 1.5rem; font-size:0.85rem;">Learn More</span>
+      </a>
+      <a href="mentorship.html" class="card" style="text-decoration:none; color:inherit;">
+        <div class="card-accent warm"></div>
+        <h3>Immigrant Student Mentorship</h3>
+        <p>Peer mentors guide newly arrived students through the social, academic, and cultural challenges of adjustment.</p>
+        <span class="btn-secondary" style="padding:0.6rem 1.5rem; font-size:0.85rem;">Learn More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="donate-section fade-in">
+    <div class="donate-inner">
+      <span class="section-tag">Support Our Mission</span>
+      <h2 class="section-title">Help Us Grow</h2>
+      <p class="section-desc">Your contribution helps us connect more students across borders and provide mentorship to those who need it most.</p>
+      <a href="donate.html" class="btn-primary">Donate</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
+
+    // Mobile dropdown toggle
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            item.classList.toggle('open');
+          }
+        });
+      }
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
