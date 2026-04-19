@@ -402,7 +402,7 @@ footer {
   flex-wrap: wrap; gap: 1rem;
 }
 .footer-logo { display: flex; align-items: center; }
-.footer-logo img { height: 28px; width: auto; filter: brightness(10); }
+.footer-logo img { height: 28px; width: auto; }
 .footer-links { display: flex; gap: 2rem; list-style: none; }
 .footer-links a {
   color: rgba(255,255,255,0.5); text-decoration: none;
