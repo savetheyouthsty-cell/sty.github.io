@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team - Save the Youth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Save the Youth" class="nav-logo-img" /></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#">About</a><div class="dropdown"><a href="about.html">About Us</a><a href="team.html">Our Team</a></div></li>
+      <li class="nav-item"><a href="#">Programs</a><div class="dropdown"><a href="exchange.html">Cultural Exchange</a><a href="mentorship.html">Mentorship</a></div></li>
+      <li class="nav-item"><a href="apply.html">Apply</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-bg"><div class="circle c1"></div><div class="circle c2"></div></div>
+    <span class="section-tag">Our Team</span>
+    <h1 class="section-title">The People Behind Save the Youth</h1>
+    <p class="section-desc">A team of students committed to building bridges between cultures and supporting immigrant youth.</p>
+  </section>
+
+  <!-- ===================================================================
+       HOW TO EDIT THIS PAGE
+       1. Copy one <div class="team-member"> block for each person.
+       2. Replace the name, role, and description.
+       3. For a photo, save the file inside a "photos" folder and swap
+          <div class="team-photo placeholder">&#127793;</div>
+          for
+          <img src="photos/filename.jpg" class="team-photo" alt="Name" />
+       =================================================================== -->
+
+  <div class="team-grid fade-in">
+
+    <div class="team-member">
+      <div class="team-photo placeholder">&#127793;</div>
+      <h3>Johann Kim</h3>
+      <div class="role">President</div>
+      <p>Johann leads Save the Youth and oversees program design, school partnerships, and daily operations.</p>
+    </div>
+
+    <div class="team-member">
+      <div class="team-photo placeholder">&#127793;</div>
+      <h3>Jackson Kuhlman</h3>
+      <div class="role">Secretary</div>
+      <p>Jackson keeps records of meetings and decisions, manages participant communication, and handles scheduling.</p>
+    </div>
+
+    <div class="team-member">
+      <div class="team-photo placeholder">&#127793;</div>
+      <h3>Abraham Coulibaly</h3>
+      <div class="role">Director</div>
+      <p>Abraham helps guide program direction, supports outreach, and works on long term planning.</p>
+    </div>
+
+  </div>
+
+  </div>
+
+  <div class="content-section fade-in" style="text-align:center; padding-top:0;">
+    <p style="margin-bottom:2rem;">We are always looking for students who want to help build Save the Youth. If you would like to join the team, reach out to us.</p>
+    <a href="contact.html" class="btn-secondary">Contact Us</a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" alt="Save the Youth" /></div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="exchange.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-legal">
+        <p>Save the Youth is a registered 501(c)(3) nonprofit organization. EIN: <span class="ein">42-2146690</span></p>
+      </div>
+      <p class="footer-copy">&copy; 2026 Save the Youth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (item.querySelector('.dropdown')) {
+        item.querySelector(':scope > a').addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      }
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
