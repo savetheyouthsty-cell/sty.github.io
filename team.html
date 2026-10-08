@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Team - Save the Youth</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .profiles { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 4rem; display: flex; flex-direction: column; gap: 4.5rem; }
+    .profile { display: flex; align-items: center; gap: 3.5rem; }
+    .profile:nth-child(even) { flex-direction: row-reverse; }
+    .profile-photo { flex: 0 0 300px; width: 300px; height: 300px; border-radius: 24px; object-fit: cover; background: var(--clr-warm); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .profile-text { flex: 1; }
+    .profile-text h3 { font-family: var(--font-display); font-size: 1.9rem; color: var(--clr-deep); margin-bottom: 0.3rem; }
+    .profile-text .role { font-size: 0.82rem; color: var(--clr-earth); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .profile-text p { font-size: 1.02rem; line-height: 1.85; color: var(--clr-text-light); font-weight: 300; margin-bottom: 1rem; }
+    @media (max-width: 900px) {
+      .profiles { gap: 3.5rem; }
+      .profile, .profile:nth-child(even) { flex-direction: column; text-align: center; gap: 1.6rem; }
+      .profile-photo { flex: none; width: 240px; height: 240px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -27,37 +42,36 @@
     <p class="section-desc">A team of students committed to building bridges between cultures and supporting immigrant youth.</p>
   </section>
 
-  <!-- ===================================================================
-       HOW TO EDIT THIS PAGE
-       1. Copy one <div class="team-member"> block for each person.
-       2. Replace the name, role, and description.
-       3. For a photo, save the file inside a "photos" folder and swap
-          <div class="team-photo placeholder">&#127793;</div>
-          for
-          <img src="photos/filename.jpg" class="team-photo" alt="Name" />
-       =================================================================== -->
+  <div class="profiles">
 
-  <div class="team-grid fade-in">
-
-    <div class="team-member">
-      <img src="photos/johann.jpg" class="team-photo" alt="Johann Kim" onerror="this.outerHTML='&lt;div class=&quot;team-photo placeholder&quot;&gt;&amp;#127793;&lt;/div&gt;'" />
-      <h3>Johann Kim</h3>
-      <div class="role">President</div>
-      <p>Johann leads Save the Youth, recruits mentors, and matches each host with an international partner.</p>
+    <div class="profile fade-in">
+      <img src="johann.jpg" class="profile-photo" alt="Johann Kim" />
+      <div class="profile-text">
+        <h3>Johann Kim</h3>
+        <div class="role">Founder and President</div>
+        <p>Johann is a senior at Woodson High School in Fairfax, Virginia, with a strong interest in economics and business. He founded Save the Youth to give students in the United States and abroad a simple way to build real friendships through conversation.</p>
+        <p>As President, Johann leads the organization and sets its direction. He recruits Host mentors, reviews applications, and matches each Host with an international Partner based on schedules and interests. He also sits in on sessions from time to time to see how pairs are doing and to keep improving the program.</p>
+      </div>
     </div>
 
-    <div class="team-member">
-      <img src="photos/jackson.jpg" class="team-photo" alt="Jackson Kuhlman" onerror="this.outerHTML='&lt;div class=&quot;team-photo placeholder&quot;&gt;&amp;#127793;&lt;/div&gt;'" />
-      <h3>Jackson Kuhlman</h3>
-      <div class="role">Secretary</div>
-      <p>Jackson tracks how each pair is doing, manages program emails, and follows up on student absences.</p>
+    <div class="profile fade-in">
+      <img src="jackson.jpg" class="profile-photo" alt="Jackson Kuhlman" />
+      <div class="profile-text">
+        <h3>Jackson Kuhlman</h3>
+        <div class="role">Secretary</div>
+        <p>Jackson is a core member of the Save the Youth leadership team. He keeps track of the details so that nothing falls through the cracks as the program grows.</p>
+        <p>As Secretary, Jackson reviews the session tracker to see how each pair is progressing, manages the program&rsquo;s email communication, and follows up with students when a session is missed or a participant is hard to reach. His work helps every pair stay on track for the full program.</p>
+      </div>
     </div>
 
-    <div class="team-member">
-      <img src="photos/abraham.jpg" class="team-photo" alt="Abraham Coulibaly" onerror="this.outerHTML='&lt;div class=&quot;team-photo placeholder&quot;&gt;&amp;#127793;&lt;/div&gt;'" />
-      <h3>Abraham Coulibaly</h3>
-      <div class="role">Director</div>
-      <p>Abraham manages student participants, gives feedback to mentors, and keeps the program running smoothly.</p>
+    <div class="profile fade-in">
+      <img src="abraham.jpg" class="profile-photo" alt="Abraham Coulibaly" />
+      <div class="profile-text">
+        <h3>Abraham Coulibaly</h3>
+        <div class="role">Director</div>
+        <p>Abraham is a core member of the Save the Youth leadership team and helps shape how the program runs day to day. He cares about making sure every student, Host and Partner alike, has a positive and meaningful experience.</p>
+        <p>As Director, Abraham manages student participants and keeps a record of each mentor&rsquo;s progress. He sits in on sessions, writes short feedback notes, and emails mentors with suggestions so their conversations keep getting better over the program.</p>
+      </div>
     </div>
 
   </div>
